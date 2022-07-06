@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DucLangTu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    
+  <link rel="stylesheet" href="./assets/style.css">
+    <style type="text/tailwindcss">
+      @layer components {
+        .icon-hover {
+          @apply hover:text-primary px-2 duration-500 cursor-pointer  text-sm py-1 pr-2;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+            blueprimary:'#07294D',
+            primary:'#ffc600',
+            infor: "#07294D",
+            darktext: "#23252A",
+            lighttext: "#FFF",
+            textdarkcolor:"#7A7A7A",
+            bgcolor:"#F9F9F9",
+            transwhite:"rgba(255,255,255,0.9)",
+            transblue:"rgba(18, 44, 75,0.9)",
+            lightprimary:"#FAC911",
+            facility:"rgba(18, 44, 75,0.7)",
+            transblack:"rgba(0,0,0,0.9)",
+              
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- ScrollTop Btn --> 
+    <button class="scrolltop__btn w-[45px] h-[45px] rounded-[50%] bg-primary text-darktext fixed bottom-10 right-10 z-50 text-2xl opacity-0 "><i class="fa-solid fa-angle-up"></i></button>
+    <section id="header" class="w-100">
+      <div class="fixed top-0 z-50 w-full">
+        <!-- Infor   -->
+        <div class="infor__element bg-infor h-[50px] text-lighttext ">
+          <div class="sm:mx-[20%] mx-[20%]">
+            <div class="flex py-3 sm:px-10 justify-between">
+              <div class="sm:flex hidden ">
+                <i class="fa-solid fa-envelope pt-1"></i>
+                <h1
+                  class="hover:text-primary duration-500 cursor-pointer sm:text-sm pl-2 pr-5 pt-1  text-sm"
+                >
+                  info@yoursite.com
+                </h1>
+                <i class="fa-solid fa-phone pr-1 pt-1"></i>
+                <h1 class="text-sm pt-1">123-456-7890</h1>
+              </div>
+              <div class="flex">
+                <h1 class="text-sm pr-1 pt-1 sm:block hidden">Follow Us:</h1>
+                <i class="fa-brands fa-facebook-f icon-hover"></i>
+                <i class="fa-brands fa-twitter icon-hover"></i>
+                <i class="fa-brands fa-youtube icon-hover"></i>
+                <i class="fa-brands fa-instagram icon-hover"></i>
+                <a
+                  href="#"
+                  class="text-primary hover:text-white duration-300 px-2"
+                  >Login</a
+                >
+                /
+                <a
+                  href="#"
+                  class="text-primary text hover:text-white duration-300 px-2"
+                  >Register</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Nav-bar -->
+        <div class="navbar__element bg-lighttext h-[80px] text-darktext  ">
+          <div class="sm:mx-[400px] flex justify-between   relative">
+            <div class="">
+              <img
+                src="https://thepixelcurve.com/wp/edubin/wp-content/uploads/2019/08/dark-logo.png"
+                class="cursor-pointer  w-[180px] my-4 mx-5 sm:mx-0 "
+              />
+            </div>
+            <div class=" navbar__dropdown--list py-7  sm:flex hidden  pr-[80px] sm:top-0 absolute sm:relative top-[80px] sm:bg-transparent bg-lighttext w-full sm:w-[60%]  " >
+              <div
+                class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer  "
+                >Home <i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+              <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100 duration-500 ">
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div> All Home Demos</a></li>
+              </ul>
+            </div>
+
+            <div
+            class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer "
+            >Courses<i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+          <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100  duration-500 ">
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>LearnPress Profile</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li> 
+          </ul>
+        </div>
+               <div
+                class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer "
+                >Home <i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+              <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100  duration-500 ">
+              
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>LearnPress Profile</a></li>
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+                <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>LearnPress Profile</a></li>
+              </ul>
+            </div>
+
+            <div
+            class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer "
+            >Events <i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+          <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100  duration-500 ">
+          
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>LearnPress Profile</a></li>
+            <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Courses Grid Variations</a></li>
+            
+          </ul>
+        </div>
+
+        <div
+        class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer "
+        >Blog <i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+      <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100  duration-500 ">
+      
+        <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+        <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>LearnPress Profile</a></li>
+        
+      </ul>
+    </div>
+
+    <div
+    class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 group cursor-pointer "
+    >Shop <i class="fa-solid fa-angle-down opacity-0 sm:opacity-100"></i> <i class="fa-solid fa-plus absolute right-[13%] sm:opacity-0 opacity-100 text-xl"></i>
+  <ul class=" sm:absolute sm:top-[80px] top-0 relative  z-20 bg-lighttext pl-4 pr-20 py-4 sm:border-t-2 border-none border-t-primary cursor-pointer sm:hidden  block opacity-0 group-hover:opacity-100  duration-500 ">
+  
+    <li class="py-2 hover:translate-x-1 -translate-x-3 duration-500   "><a href="" class="text-textdarkcolor flex nav__item "> <div class="nav__item--dot w-[10px] h-[2px] bg-primary m-[10px] opacity-0 duration-500 "></div>Memberships Level</a></li>
+    
+  </ul>
+</div>
+<a
+href="#"
+class="uppercase text-[14px] sm:font-bold font-normal hover:text-primary sm:mx-0 mx-7 w-[100%] sm:border-none border-t-[1px] border-textdarkcolor  py-4 sm:py-0 block"
+>Contact</a
+>
+            </div>
+           
+            <div class="flex absolute sm:right-0 right-5 top-[28%] ">
+              <i class="navbar__dropdown sm:hidden block fa-solid fa-bars text-3xl mx-[30px]"></i>
+              <div class="pb-1 font-black text-xl cursor-pointer"
+              ><i class="fa fa-search"></i
+            ></div>
+            <div class="px-3  font-black text-lg relative  cursor-pointer"
+              ><i class="fa-solid fa-cart-arrow-down"></i>
+              <div
+                class="absolute top-[-5px] right-[3px] rounded-[50%] bg-amber-300 text-xs py-0 px-1"
+                >0
+              </div></span>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+    <!-- Register -->
+    <section id="register">
+         <div class="w-full mt-[130px] ">
+            <div class="register__header h-[300px] relative ">
+                <img src="./assets/news_image_3.jpeg" class="w-full h-[300px] object-cover" alt="header image">
+                <div class="text-lighttext bg-transblue w-full h-full absolute top-0 px-[20%] py-[40px]">
+                    <h2 class="text-5xl font-bold">Student Registration</h2>
+                    <div class="flex"><h4 class="mr-2">Home </h4>/ <h4 class="mx-2"> Student Registration</h4></div>
+                </div>
+
+            </div>
+            <div class="register__content mx-[20%] my-[100px]">
+                <form id="form-1" class="bg-white shadow-md rounded px-8 py-24 mb-4 grid grid-cols-2 gap-5 relative">
+                    
+                        <div class="mb-4 ">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="firstname">
+                              First Name
+                            </label>
+                            <input required class="shadow appearance-none border rounded w-[100%] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="firstname" type="text" placeholder="Username">
+                            <p class="text-red-500 text-xs italic"></p>  
+                        </div>
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="lastname">
+                             Last Name
+                            </label>
+                          
+                            <input required class="shadow appearance-none border rounded w-[100%] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastname" type="text" placeholder="Username">
+                            <p class="text-red-500 text-xs italic"></p>  
+                        </div>
+                  
+                   
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                          Username
+                        </label>
+                        <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+                        <p class="text-red-500 text-xs italic"></p>  
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                          Email
+                        </label>
+                        <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Username">
+                        <p class="text-red-500 text-xs italic"></p>  
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                         Password
+                        </label>
+                        <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Username">
+                        <p class="text-red-500 text-xs italic"></p>  
+                    </div>
+                    
+                    <div class="mb-6">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="password-confirm">
+                        Password Confirmation
+                      </label>
+                      <input required class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password-confirm" type="password" placeholder="******************">
+                      <p class="text-red-500 text-xs italic"></p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      
+                      <button  class="bg-[#0C2338] hover:bg-primary text-white hover:text-darktext font-semibold py-4 px-9 rounded-[4px] duration-500 mx-3 absolute right-10" id="register__btn">
+                        Register
+                      </button>
+                    </div>
+                  </form>
+            </div>
+
+         </div>
+    </section>
+    <section class="footer">
+        <div class="w-full ">
+            <div class="bg-blueprimary sm:px-[20%] px-[20px] py-[30px] sm:flex block text-lighttext">
+              <div class="text-lighttext">
+                <img src="https://thepixelcurve.com/wp/edubin/wp-content/uploads/2019/08/white-logo.png" alt="logo" class="h-[50px] w-[180px] my-[40px]">
+                <p class="w-[350px] break-word">Edubin perfect for online courses and other institutes. It’s a complete solution with lms features and functionalities.</p>
+                <div class="flex py-3">
+                  <div class="h-[40px] w-[40px] bg-infor text-center rounded-[50%] hover:scale-90 duration-500 mr-3">
+                    <i class="fa-brands fa-facebook-f icon-hover pt-1 text-lg  "></i>
+                  </div>
+                  <div class="h-[40px] w-[40px] bg-infor text-center rounded-[50%] hover:scale-90 duration-500 mr-3">
+                    <i class="fa-brands fa-twitter icon-hover pt-1 text-lg"></i>
+                  </div>
+                  <div class="h-[40px] w-[40px] bg-infor text-center rounded-[50%] hover:scale-90 duration-500 mr-3">
+                    <i class="fa-brands fa-youtube icon-hover pt-1 text-lg"></i>
+                  </div>
+                  <div class="h-[40px] w-[40px] bg-infor text-center rounded-[50%] hover:scale-90 duration-500 mr-3">
+                    <i class="fa-brands fa-instagram icon-hover pt-1 text-lg"></i>
+                  </div>
+                  
+               
+                </div>
+              </div>
+            
+              <div class="sm:flex block">
+                <div class=" sm:px-[40px] px-0  ">
+                  <h2 class="text-2xl font-bold pt-[40px] pb-[30px]">Feature Links</h2>
+                 <div class="flex feature__link">
+                    <!-- Feature Link Left-->
+                  <div class="feature__link--left pr-[20px]">
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">About Us</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Graduation</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Scholarship</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Contact</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Result</p>
+                    </div>
+                   </div>
+     <!-- Feature Link Right-->
+                   <div class="feature__link--right pr-[20px]">
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">About Us</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Graduation</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Scholarship</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Contact</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Result</p>
+                    </div>
+                   </div>
+                 </div>
+                
+  
+                 </div>
+                 <!-- Support Link -->
+                 <div class=" sm:px-[40px] px-0   ">
+                  <h2 class="text-2xl font-bold pt-[40px] pb-[30px]">Support</h2>
+                 
+                    
+                  <div class=" pr-[20px]">
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">About Us</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Graduation</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Scholarship</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Contact</p>
+                    </div>
+                    <div class="flex py-[5px]">
+                      <i class="fa-solid fa-chevron-right text-[12px] text-primary pt-[7px]"></i>
+                      <p class="text-md px-[10px] hover:translate-x-2 duration-500 cursor-pointer hover:text-primary ">Result</p>
+                    </div>
+                   </div>
+                 </div>
+
+                 <div class=" sm:px-[40px] px-0  ">
+                  <h2 class="text-2xl font-bold pt-[40px] pb-[30px]">Contact</h2>
+                  <p class="py-[20px]">203, Envato Labs, Behind Alis Steet, Melbourne, Australia.</p>
+                  <div>
+                    <p> <i class="fa-solid fa-phone-flip"></i>+1 23-4567-8920</p>
+                    <p> <i class="fa-solid fa-envelope"></i> info@yourmail.com</p>
+                    <p><i class="fa-solid fa-globe"></i>www.yourdomain.com</p>
+                  </div>
+                 </div>
+              </div>
+              
+
+
+               
+            </div>
+            <div class="bg-infor h-[80px]  text-lighttext ">
+              <div class="flex justify-between sm:mx-[20%]   pt-[30px] ">
+                <div class="mx-auto sm:mx-0 ">
+                  <p>© 2022 Pixelcurve. All rights reserved.
+                  </p>
+                </div>
+                <div class="sm:flex hidden">
+                  <h3 class="hover:text-primary duration-500 px-1 ">Language</h3> <div class="h-[12px] w-[1px] bg-lighttext mt-[8px]"></div>
+                  <h3 class="hover:text-primary duration-500 px-1 ">WordPress</h3><div class="h-[12px] w-[1px] bg-lighttext mt-[8px]"></div>
+                  <h3 class="hover:text-primary duration-500 px-1 ">Privacy</h3><div class="h-[12px] w-[1px] bg-lighttext mt-[8px]"></div>
+                  <h3 class="hover:text-primary duration-500 px-1 ">FAQs</h3><div class="h-[12px] w-[1px] bg-lighttext mt-[8px]"></div>
+                  <h3 class="hover:text-primary duration-500 px-1 ">Support</h3>
+                </div>
+              </div>
+             
+              
+            </div>
+        </div>
+      </section>
+
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-1.11.0.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+  <script src="./app.js"></script>
+  </body>
+</html>

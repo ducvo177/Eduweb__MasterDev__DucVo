@@ -5,6 +5,13 @@ const navbar = document.querySelector(".navbar__element");
 const coursesSlider = document.querySelector(".courses__slider");
 const facilityLayerBtn = document.querySelector(".facility__layer--btn");
 const scrollTop = document.querySelector(".scrolltop__btn");
+const firstName = document.querySelector("#firstname");
+const lastName = document.querySelector("#lastname");
+const userName = document.querySelector("#username");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+const passwordConfirm = document.querySelector("#password-confirm");
+const submitBtn= document.querySelector("#register__btn")
 window.onscroll = function () {
   myFunction();
 };
@@ -173,14 +180,14 @@ $(document).ready(function () {
   });
 });
 
-facilityBtn.onclick = function () {
-  facilityLayer.classList.toggle("active");
-  navbar.classList.toggle("hidden");
-};
-facilityLayerBtn.onclick = function () {
-  facilityLayer.classList.toggle("active");
-  navbar.classList.toggle("hidden");
-};
+// facilityBtn.onclick = function () {
+//   facilityLayer.classList.toggle("active");
+//   navbar.classList.toggle("hidden");
+// };
+// facilityLayerBtn.onclick = function () {
+//   facilityLayer.classList.toggle("active");
+//   navbar.classList.toggle("hidden");
+// };
 //Fetch Link ảnh lỗi
 // fetch("https://60d4611a61160900173cb070.mockapi.io/courses")
 // .then(response => response.json())
@@ -231,8 +238,26 @@ facilityLayerBtn.onclick = function () {
 //                   </div>`
 //     })
 //   });
-var html = "";
-for (var i = 0; i < 5; i++) {
-  html += `<i class="fa-solid fa-star pr-1"></i>`;
+
+//Register
+//Chưa validate
+let user={}
+
+function object(){
+  user.firstName=firstName.value
+  user.lastName=lastName.value
+  user.username=userName.value
+  user.email=email.value
+  user.password=password.value
+  user.passwordConfirm=passwordConfirm.value
 }
-rateStar.map((rate) => {});
+
+
+submitBtn.onclick=()=>{
+  object()
+  localStorage.setItem('user', JSON.stringify(user));
+}
+ 
+
+
+
