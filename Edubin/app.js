@@ -240,7 +240,7 @@ $(document).ready(function () {
 //   });
 
 //Register
-//Chưa validate
+
 let user={}
 
 function object(){
@@ -251,11 +251,48 @@ function object(){
   user.password=password.value
   user.passwordConfirm=passwordConfirm.value
 }
-
+function validate() {
+      
+  if( document.myForm.lastname.value == "" ) {
+     alert( "Please provide your last name!" );
+     document.myForm.lastname.focus() ;
+     return false;
+  }
+  if( document.myForm.firstname.value == "" ) {
+    alert( "Please provide your first name!" );
+    document.myForm.firstname.focus() ;
+    return false;
+ }
+  if( document.myForm.email.value == "" ) {
+     alert( "Please provide your Email!" );
+     document.myForm.email.focus() ;
+     return false;
+  }
+  if( document.myForm.username.value == "" ) {
+    alert( "Please provide your username!" );
+    document.myForm.username.focus() ;
+    return false;
+ }
+  if( document.myForm.password.value == "" ||  
+     document.myForm.password.value.length < 8 ) {
+     
+     alert( "Please provide a password in the format #####." );
+     document.myForm.password.focus() ;
+     return false;
+  }
+  if( document.myForm.passwordconfirm.value != document.myForm.password.value) {
+     alert( "Please provide the same password !" );
+     return false;
+  }
+  return( true );
+}
 
 submitBtn.onclick=()=>{
-  object()
-  localStorage.setItem('user', JSON.stringify(user));
+  if(!validate()){
+    object()
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
 }
  
 
