@@ -15,6 +15,7 @@ const submitBtn= document.querySelector("#register__btn")
 window.onscroll = function () {
   myFunction();
 };
+
 function navbarDrop() {
   navbar.classList.add("duration-500", "translate-y-0");
 }
@@ -28,10 +29,12 @@ function myFunction() {
     document.querySelector(".infor__element").classList.add("hidden");
     scrollTop.classList.add("opacity-100", "duration-500");
     navbar.classList.add("-translate-y-30");
+    document.querySelector(".navbar__element").classList.add("growdown");
     setTimeout(navbarDrop, 500);
   } else {
     scrollTop.classList.remove("opacity-100", "duration-500");
     document.querySelector(".infor__element").classList.remove("hidden");
+    document.querySelector(".navbar__element").classList.remove("growdown");
   }
 }
 scrollTop.onclick = function () {
@@ -40,7 +43,7 @@ scrollTop.onclick = function () {
 //Navbar Dropdown
 document.querySelector(".navbar__dropdown").onclick = () => {
   document.querySelector(".navbar__dropdown--list").classList.toggle("hidden");
-  document.querySelector(".navbar__dropdown--list").classList.add("grow");
+  document.querySelector(".navbar__dropdown--list").classList.add("growdown");
 };
 
 function resetSlick($slick_slider, settings) {
@@ -57,31 +60,7 @@ function resetSlick($slick_slider, settings) {
     }
   });
 }
-$(document).ready(function () {
-  $(".courses__slider").slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: true,
-    arrows: true,
-    draggable: false,
 
-    prevArrow: $(".prev__courses"),
-    nextArrow: $(".next__courses"),
-    responsive: [
-      {
-        breakpoint: 568,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false,
-        },
-      },
-    ],
-
-    autoplay: true,
-    autoplaySpeed: 1000,
-  });
-});
 
 $(document).ready(function () {
   $(".bannerchild__slider").slick({
@@ -188,57 +167,85 @@ $(document).ready(function () {
 //   facilityLayer.classList.toggle("active");
 //   navbar.classList.toggle("hidden");
 // };
-//Fetch Link ảnh lỗi
-// fetch("https://60d4611a61160900173cb070.mockapi.io/courses")
-// .then(response => response.json())
-//   .then(data => {
+// Fetch Link ảnh lỗi
+fetch("https://60d4611a61160900173cb070.mockapi.io/courses")
+.then(response => response.json())
+  .then(data => {
+    let html=''
+    console.log(data);
+    data.map((x)=>{
+      html+=` <div class="courses__slider--item  ">
+                    <div class="cursor-pointer h-[220px] w-[340px] overflow-hidden ">
+                      <img src="${x.image}" class="  hover:scale-110 w-[340px] duration-500 " alt="">
+                    </div>
+                    <div class="courses__content p-8 w-[340px] bg-lighttext cursor-pointer">
+                      <div class="flex">
+                        <div class="rate  text-primary ">
 
-//     data.map((x)=>{
-//       coursesSlider.innerHTML+=` <div class="courses__slider--item  ">
-//                     <div class="cursor-pointer h-[220px] w-[340px] overflow-hidden ">
-//                       <img src="${x.image}" class="  hover:scale-110 w-[340px] duration-500 " alt="">
-//                     </div>
-//                     <div class="courses__content p-8 w-[340px] bg-lighttext cursor-pointer">
-//                       <div class="flex">
-//                         <div class="rate  text-primary ">
+                        </div>
+                        <p class="font-semibold px-3 text-textdarkcolor">${x.rate}<p class="font-semibold  text-textdarkcolor" >(${x.rate_quantity})</p> </p>
 
-//                         </div>
-//                         <p class="font-semibold px-3 text-textdarkcolor">${x.rate}<p class="font-semibold  text-textdarkcolor" >(${x.rate_quantity})</p> </p>
+                      </div>
 
-//                       </div>
+                     <h1 class="py-5 text-2xl font-bold hover:text-primary duration-500"> ${x.name}</h1>
+                     <div class=" text-textdarkcolor flex py-2">
+                      <i class="fa-regular fa-user pt-1 pr-2"></i>
+                      <p class="pr-3" >${x.total_enrolled}</p>
+                      <i class="fa-regular fa-clock pt-1 pr-2"></i>
+                      <p>${x.duration}</p>
 
-//                      <h1 class="py-5 text-2xl font-bold hover:text-primary duration-500"> ${x.name}</h1>
-//                      <div class=" text-textdarkcolor flex py-2">
-//                       <i class="fa-regular fa-user pt-1 pr-2"></i>
-//                       <p class="pr-3" >${x.total_enrolled}</p>
-//                       <i class="fa-regular fa-clock pt-1 pr-2"></i>
-//                       <p>${x.duration}</p>
+                     </div>
 
-//                      </div>
+                     <div class=" flex justify-between py-5">
+                      <div class="flex">
+                        <img src="./assets/image/teacher_1.jpg" class="w-[40px] h-[40px] rounded-[50%]" alt="">
+                      <p class="pl-2 "> by  <h2 class="hover:text-primary font-bold duration-500  px-1 ">Tom Hardy</h2> in  <h2 class="hover:text-primary font-bold duration-500  px-1 text-infor">Tom Hardy</h2> </p>
+                      </div>
+                     </div>
+                     <div class="w-[100%] h-[1px] bg-gray-200"></div>
+                      <div class="courses__footer flex   py-3">
 
-//                      <div class=" flex justify-between py-5">
-//                       <div class="flex">
-//                         <img src="./assets/teacher_1.jpg" class="w-[40px] h-[40px] rounded-[50%]" alt="">
-//                       <p class="pl-2 "> by  <h2 class="hover:text-primary font-bold duration-500  px-1 ">Tom Hardy</h2> in  <h2 class="hover:text-primary font-bold duration-500  px-1 text-infor">Tom Hardy</h2> </p>
-//                       </div>
-//                      </div>
-//                      <div class="w-[100%] h-[1px] bg-gray-200"></div>
-//                       <div class="courses__footer flex   py-3">
+                          <h2 class="hover:text-primary font-bold duration-500 text-md px-1 mr-[100px] ">${x.price}</h2>
 
-//                           <h2 class="hover:text-primary font-bold duration-500 text-md px-1 mr-[100px] ">${x.price}</h2>
+                        <div class="text-textdarkcolor flex ml-2">
+                          <i class="text-primary fa-solid fa-cart-arrow-down pt-1 pr-1"></i>
+                          <p class="font-semibold">Get Enrolled</p>
+                        </div>
 
-//                         <div class="text-textdarkcolor flex ml-2">
-//                           <i class="text-primary fa-solid fa-cart-arrow-down pt-1 pr-1"></i>
-//                           <p class="font-semibold">Get Enrolled</p>
-//                         </div>
+                      </div>
 
-//                       </div>
+                  </div>
+                  </div>`
+    })
+    coursesSlider.innerHTML=html;
 
-//                   </div>
-//                   </div>`
-//     })
-//   });
-
+    $(document).ready(function () {
+      $(".courses__slider").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        draggable: false,
+    
+        prevArrow: $(".prev__courses"),
+        nextArrow: $(".next__courses"),
+        responsive: [
+          {
+            breakpoint: 568,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: false,
+            },
+          },
+        ],
+    
+        autoplay: true,
+        autoplaySpeed: 1000,
+      });
+    });
+  });
+ 
 //Register
 
 let user={}
