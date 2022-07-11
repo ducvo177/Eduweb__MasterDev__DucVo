@@ -155,6 +155,17 @@ $(document).ready(function () {
     draggable: true,
     autoplaySpeed: 2000,
     autoplay: true,
+     responsive: [
+      {
+        breakpoint: 568,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          infinite: false,
+        },
+      },
+    ],
   });
 });
 
