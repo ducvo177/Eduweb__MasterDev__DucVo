@@ -181,8 +181,10 @@ fetch("https://60d4611a61160900173cb070.mockapi.io/courses")
       for (let i = 0; i < 5 - x.rate; i++) {
         rate += `<i class="fa-regular fa-star text-primary"></i> `;
       }
-      html += ` <div class="courses__slider--item  ">
+      html += ` <div class="courses__slider--item  relative">
                     <div class="cursor-pointer h-[220px] w-[340px] overflow-hidden ">
+                    <h3 class="absolute px-[3%] py-[2%] bg-infor text-lighttext top-[3%] left-[3%] rounded-sm"> ${x.level}</h3>
+                    <i class="fa-regular fa-bookmark absolute sm:right-[15%] 2xl:right-[18%] right-[6%] top-[3%] px-[3%] py-[2%] bg-lighttext rounded-sm"></i>
                       <img src="${x.image}" class="  hover:scale-110 w-[340px] duration-500 " alt="">
                     </div>
                     <div class="courses__content p-8 w-[340px] bg-lighttext cursor-pointer">
